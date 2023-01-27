@@ -26,7 +26,24 @@ Pizza.prototype.selectToppings = function() {
 };
 
 
-
-
-
 //UI Logic -----------------------
+
+function handleFormSubmission(event) {
+  event.preventDefault();
+  const pizzaSize = document.getElementById("crust-size").value;
+  const pizzaToppings = document.getElementById("select-toppings").value;
+  let newPizza = new Pizza(pizzaSize, pizzaToppings);
+  let displayOrder = document.getElementById("display-order");
+  let showTotal = document.getElementById("total-cost");
+  let totalCost = newPizza.crustCost() + newPizza.selectToppings();
+  let showSize = document.getElementById("size");
+  let showToppings = document.getElementById("toppings");
+  showSize.innerText = newPizza.crustCost();
+  showToppings.innerText = newPizza.selectToppings();
+  showTotal.innerText = "$" + totalCost;
+  displayOrder.removeAttribute("class");
+}
+
+window.addEventListener("load", function() {
+  document.getElementById("select-order").addEventListener("submit", handleFormSubmission)
+})

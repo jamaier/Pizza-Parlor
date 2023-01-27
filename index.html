@@ -12,21 +12,27 @@
     </div>
     <div>
       <form id="select-order">
-        <label for="size">Select a size:</label>
-        <select name="" id="">
+        <label for="select-size">Select a size:</label>
+        <select name="crust-size" id="crust-size">
           <option value="small">Small</option>
           <option value="medium">Medium</option>
           <option value="large">Large</option>
         </select>
 
-        <label for="toppings">Select a topping:</label>
-        <select>
+        <label for="select-toppings">Select a topping:</label>
+        <select name="select-toppings" id="select-toppings">
           <option value="peperoni">Peperoni</option>
           <option value="mushroom">Mushroom</option>
         </select>
-
         <button type="submit">Submit Order</button>
       </form>
+    </div>
+
+    <div class="hidden" id="display-order">
+      <h4>Your Order</h4>
+      <p id="size">Size:</p>
+      <p id="toppings">toppings:</p>
+      <p id="total-cost">total:</p>
     </div>
   </body>
 </html>
