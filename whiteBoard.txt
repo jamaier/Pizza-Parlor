@@ -6,3 +6,14 @@ Create Pizza object -
     - Mushroom
 
 set up html form to display options in a dropdown allowing size and signle topping for now. 
+
+Phase 2 - 
+change toppings to checkboxes and add toppings.
+  
+  start with changing the two options to checkboxes then test functionality
+
+  Once finished. Add additional options.
+
+   Current Options: (to add to)
+   - Peperoni
+   - Mushrooms

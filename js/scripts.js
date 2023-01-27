@@ -22,14 +22,10 @@ Pizza.prototype.crustCost = function() {
 };
 
 Pizza.prototype.selectToppings = function() {
-  let toppingsCost = 0.00;
-  if (this.topping === "Peperoni") {
-    toppingsCost += 1.00;
-  } 
-  if (this.topping === "Mushrooms") {
-    toppingsCost += 1.00;
+  this.toppingsList = [];
+  for(let i = 0; i < checkbox.length; i++) {
+    toppingsList.push(checkbox[i].value);
   }
-  return toppingsCost;
 };
 
 
