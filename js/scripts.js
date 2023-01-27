@@ -22,12 +22,12 @@ Pizza.prototype.crustCost = function() {
 };
 
 Pizza.prototype.showToppings = function() {
-  this.topping = [];
+  let topping = [];
   let toppingList = document.querySelectorAll("input[type=checkbox]:checked");
   for(let i = 0; i < toppingList.length; i++) {
-  this.topping.push(toppingList[i].value);
+    topping.push(toppingList[i].value);
   }
-  return this.topping.join(", ");
+  return topping;
   }
 
 Pizza.prototype.toppingsCost = function() {
@@ -56,7 +56,7 @@ function handleFormSubmission(event) {
   let showSize = document.getElementById("size");
   let showToppings = document.getElementById("toppings");
   showSize.innerText = newPizza.size;
-  showToppings.innerText = toppings;
+  showToppings.innerText = toppings.join(", ");
   showTotal.innerText = "$" + totalCost;
   displayOrder.removeAttribute("class");
 }
