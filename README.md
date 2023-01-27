@@ -35,3 +35,19 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 _MIT_
 
 Copyright (c) _2023_ _Jacob Maier_
+
+
+## Tests - 
+
+#### Describe: Pizza("small")
+
+#### Test: "It should return a pizza object for size."
+
+Code: if crust is "small" return crustCost += 7
+
+expected output: 7
+
+
+
+
+
