@@ -43,7 +43,7 @@ Copyright (c) _2023_ _Jacob Maier_
 
 #### Test: "It should return a pizza object for size based on cost."
 
-Code: if crust is "small" return crustCost += 7
+Code: if crust === "small" return crustCost += 7
 
 expected output: 7
 
@@ -52,8 +52,28 @@ expected output: 7
 
 #### Test: "It should return a pizza object for size based on cost."
 
-Code: if crust is "medium" return crustCost += 9
+Code: if crust === "medium" return crustCost += 9
 
 expected output: 9
+
+
+#### Describe: Pizza("large")
+
+#### Test: "It should return a pizza object for size based on cost."
+
+Code: if crust === "medium" return crustCost += 11
+
+expected output: 11
+
+
+#### Describe: Pizza("small", "peperoni")
+
+#### Test: "It should return a pizza object for size and toppings based on cost."
+
+Code: 
+  if crust === "medium" return crustCost += 9
+  if topping === "peperoni" return toppingsCost += 1
+
+expected output: crustCost = 9 and toppingsCost = 1
 
 
