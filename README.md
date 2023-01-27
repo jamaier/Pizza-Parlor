@@ -1,15 +1,15 @@
-# _{Application Name}_
+# _Pizza Parlor_
 
 #### By _Jacob Maier_
 
-#### _{Brief description of application}_
+#### _A webpage for a Pizza Parlor to take orders using object oriented JavaScript_
 
 ## Technologies Used
 
-* _List all_
-* _the major technologies_
-* _you used in your project_
-* _here_
+* _JavaScript_
+* _HTML_
+* _CSS_
+* _Git_
 
 ## Description
 
