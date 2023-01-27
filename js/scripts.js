@@ -18,7 +18,7 @@ Pizza.prototype.crustCost = function () {
 };
 
 Pizza.prototype.sideSelection = function () {
-  let sideCost = 0
+  sideCost = 0;
   if(this.side === "Salad") {
     sideCost += 5;
   } else if (this.side === "Wings") {
@@ -29,6 +29,7 @@ Pizza.prototype.sideSelection = function () {
   return sideCost;
 };
 
+//Pushes checked values to array for display
 Pizza.prototype.showToppings = function () {
   let topping = [];
   let toppingList = document.querySelectorAll("input[type=checkbox]:checked");
@@ -50,6 +51,7 @@ Order.prototype.delivery = function () {
   return deliveryCost;
 };
 
+//Pushes checked values to array to get length for pricing
 Order.prototype.toppingsCost = function () {
   let topping = [];
   let toppingList = document.querySelectorAll("input[type=checkbox]:checked");
@@ -72,12 +74,11 @@ function handleFormSubmission(event) {
   const sides = document.getElementById("side-options").value;
   const delivery = document.getElementById("delivery-method").value;
   let newOrder = new Order(delivery);
-  let newPizza = new Pizza(pizzaSize, pizzaToppings);
+  let newPizza = new Pizza(pizzaSize, pizzaToppings, sides);
   let toppings = newPizza.showToppings();
   let displayOrder = document.getElementById("display-order");
   let showTotal = document.getElementById("total-cost");
-  let totalCost =
-    newPizza.crustCost() + newPizza.sideSelection() + newOrder.toppingsCost() + newOrder.delivery();
+  let totalCost = newPizza.crustCost() + newPizza.sideSelection() + newOrder.toppingsCost() + newOrder.delivery();
   let showSize = document.getElementById("size");
   let showToppings = document.getElementById("toppings");
   let showSides = document.getElementById("sides")
