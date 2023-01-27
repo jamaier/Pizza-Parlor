@@ -20,8 +20,12 @@ Pizza.prototype.selectToppings = function() {
   toppingsCost = 0;
   if (this.topping === "peperoni") {
     return toppingsCost += 1;
+  } else if (this.topping === "Mushrooms") {
+    return toppingsCost += 1;
   }
-}
+};
+
+
 
 
 

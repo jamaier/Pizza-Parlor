@@ -1,6 +1,8 @@
+Phase 1 - 
 Create Pizza object - 
   Start with size and base them off cost. (start with dropdown selection.) - small, med, large
   Add toppings. (start with simple dropdown style and once everything is functional maybe checkboxes.)
     - Peperoni
     - Mushroom
 
+set up html form to display options in a dropdown allowing size and signle topping for now. 
