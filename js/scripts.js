@@ -5,24 +5,31 @@ function Pizza(size, topping) {
   this.topping = topping;
 }
 
+Pizza.prototype.selectedOrder = function() {
+  return this.size + " " + this.topping;
+}
+
 Pizza.prototype.crustCost = function() {
-  crustCost = 0;
-  if (this.size === "small") {
-    return crustCost += 7; 
-  } else if (this.size === "medium") {
-    return crustCost += 9;
-  } else if (this.size === "large") {
-    return crustCost += 11; 
+  let crustCost = 0.00;
+  if (this.size === "Small") {
+    crustCost += 7.00; 
+  } else if (this.size === "Medium") {
+    crustCost += 9.00;
+  } else if (this.size === "Large") {
+    crustCost += 11.00; 
   }
+  return crustCost;
 };
 
 Pizza.prototype.selectToppings = function() {
-  toppingsCost = 0;
-  if (this.topping === "peperoni") {
-    return toppingsCost += 1;
-  } else if (this.topping === "Mushrooms") {
-    return toppingsCost += 1;
+  let toppingsCost = 0.00;
+  if (this.topping === "Peperoni") {
+    toppingsCost += 1.00;
+  } 
+  if (this.topping === "Mushrooms") {
+    toppingsCost += 1.00;
   }
+  return toppingsCost;
 };
 
 
@@ -38,8 +45,8 @@ function handleFormSubmission(event) {
   let totalCost = newPizza.crustCost() + newPizza.selectToppings();
   let showSize = document.getElementById("size");
   let showToppings = document.getElementById("toppings");
-  showSize.innerText = newPizza.crustCost();
-  showToppings.innerText = newPizza.selectToppings();
+  showSize.innerText = newPizza.size;
+  showToppings.innerText = newPizza.topping;
   showTotal.innerText = "$" + totalCost;
   displayOrder.removeAttribute("class");
 }

@@ -66,7 +66,7 @@ Code: if crust === "medium" return crustCost += 11
 expected output: 11
 
 
-#### Describe: Pizza("small", "peperoni")
+### Describe: Pizza("small", "peperoni")
 
 #### Test: "It should return a pizza object for size and toppings based on cost."
 
@@ -75,5 +75,14 @@ Code:
   if topping === "peperoni" return toppingsCost += 1
 
 expected output: crustCost = 9 and toppingsCost = 1
+
+### Describe: selectedOrder("small", "peperoni")
+
+#### Test: "It should display the names of the toppings and size instead of numbers for costing."
+
+Code : 
+  return this.size + " " + this.topping;
+
+expected output: 
 
 
