@@ -5,10 +5,6 @@ function Pizza(size, topping) {
   this.topping = topping;
 }
 
-Pizza.prototype.selectedOrder = function() {
-  return this.size + " " + this.topping;
-}
-
 Pizza.prototype.crustCost = function() {
   let crustCost = 0.00;
   if (this.size === "Small") {
@@ -21,32 +17,55 @@ Pizza.prototype.crustCost = function() {
   return crustCost;
 };
 
-Pizza.prototype.selectToppings = function() {
-  let toppingsCost = 0.00;
-  if (this.topping === "Peperoni") {
-    toppingsCost += 1.00;
-  } 
-  if (this.topping === "Mushrooms") {
-    toppingsCost += 1.00;
+Pizza.prototype.showToppings = function() {
+  let topping = [];
+  let toppingList = document.querySelectorAll("input[type=checkbox]:checked");
+  for(let i = 0; i < toppingList.length; i++) {
+    topping.push(toppingList[i].value);
   }
-  return toppingsCost;
+  return topping;
 };
 
+function Order(deliveryMethod) {
+  this.deliveryMethod = deliveryMethod;
+}
+
+Order.prototype.delivery = function() {
+  let deliveryCost = 0
+  if(this.deliveryMethod === "Delivery") {
+    deliveryCost += 5;
+  }
+  return deliveryCost;
+};
+
+Order.prototype.toppingsCost = function() {
+  let topping = [];
+  let toppingList = document.querySelectorAll("input[type=checkbox]:checked");
+  for(let i = 0; i < toppingList.length; i++) {
+    if (toppingList[i].checked) {
+      topping.push(toppingList[i]);
+    }
+  }
+  return topping.length;
+};
 
 //UI Logic -----------------------
 
 function handleFormSubmission(event) {
   event.preventDefault();
   const pizzaSize = document.getElementById("crust-size").value;
-  const pizzaToppings = document.getElementById("select-toppings").value;
+  const pizzaToppings = document.querySelectorAll("input[type=checkbox]:checked");
+  const delivery = document.getElementById("delivery-method").value;
+  let newOrder = new Order(delivery);
   let newPizza = new Pizza(pizzaSize, pizzaToppings);
+  let toppings = newPizza.showToppings();
   let displayOrder = document.getElementById("display-order");
   let showTotal = document.getElementById("total-cost");
-  let totalCost = newPizza.crustCost() + newPizza.selectToppings();
+  let totalCost = newPizza.crustCost() + newOrder.toppingsCost() + newOrder.delivery();
   let showSize = document.getElementById("size");
   let showToppings = document.getElementById("toppings");
   showSize.innerText = newPizza.size;
-  showToppings.innerText = newPizza.topping;
+  showToppings.innerText = toppings.join(", ");
   showTotal.innerText = "$" + totalCost;
   displayOrder.removeAttribute("class");
 }
