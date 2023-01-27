@@ -21,15 +21,24 @@ Pizza.prototype.crustCost = function() {
   return crustCost;
 };
 
-Pizza.prototype.selectToppings = function() {
+Pizza.prototype.showToppings = function() {
   this.topping = [];
   let toppingList = document.querySelectorAll("input[type=checkbox]:checked");
   for(let i = 0; i < toppingList.length; i++) {
+  this.topping.push(toppingList[i].value);
+  }
+  return this.topping.join(", ");
+  }
+
+Pizza.prototype.toppingsCost = function() {
+  let topping = [];
+  let toppingList = document.querySelectorAll("input[type=checkbox]:checked");
+  for(let i = 0; i < toppingList.length; i++) {
     if (toppingList[i].checked) {
-      this.topping.push(toppingList[i]);
+      topping.push(toppingList[i]);
     }
   }
-  console.log(this.topping.length);
+  return topping.length;
 };
 
 
@@ -42,9 +51,9 @@ function handleFormSubmission(event) {
   let newPizza = new Pizza(pizzaSize, pizzaToppings);
   let displayOrder = document.getElementById("display-order");
   let showTotal = document.getElementById("total-cost");
-  let totalCost = newPizza.crustCost() + newPizza.selectToppings();
+  let totalCost = newPizza.crustCost() + newPizza.toppingsCost();
   let showSize = document.getElementById("size");
-  let showToppings = document.querySelectorAll("input[type=checkbox]:checked");
+  let showToppings = document.getElementById("toppings");
   showSize.innerText = newPizza.size;
   showToppings.innerText = newPizza.topping;
   showTotal.innerText = "$" + totalCost;
