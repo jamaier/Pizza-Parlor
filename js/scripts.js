@@ -18,12 +18,12 @@ Pizza.prototype.crustCost = function () {
 };
 
 Pizza.prototype.sideSelection = function () {
-  sideCost = 0;
-  if(this.side === "Salad") {
+  let sideCost = 0;
+  if(this.sides === "Salad") {
     sideCost += 5;
-  } else if (this.side === "Wings") {
+  } else if (this.sides === "Wings") {
     sideCost += 8;
-  } else if (this.side === "Garlic-Bread") {
+  } else if (this.sides === "Garlic-Bread") {
     sideCost += 4;
   }
   return sideCost;
@@ -71,10 +71,10 @@ function handleFormSubmission(event) {
   const pizzaToppings = document.querySelectorAll(
     "input[type=checkbox]:checked"
   );
-  const sides = document.getElementById("side-options").value;
+  const sides = document.getElementById("select-sides").value;
   const delivery = document.getElementById("delivery-method").value;
   let newOrder = new Order(delivery);
-  let newPizza = new Pizza(pizzaSize, pizzaToppings, sides);
+  let newPizza = new Pizza(pizzaSize, sides, pizzaToppings);
   let toppings = newPizza.showToppings();
   let displayOrder = document.getElementById("display-order");
   let showTotal = document.getElementById("total-cost");
