@@ -96,3 +96,13 @@ code:
 Expected Output: 2
 
 
+### Describe: selectToppings (peperoni, muchroom)
+
+code: 
+
+  topping = [];
+  toppingList = checkboxes.checked
+  for loop pushing checked checkboxes to array and return array length to display chosen toppings value.
+
+Expected Output: Peperoni, Mushroom
+
