@@ -3,17 +3,24 @@
   <head>
     <link rel="stylesheet" href="css/styles.css" type="text/css" />
     <script src="js/scripts.js"></script>
-    <title>Pterodactyle Pizza</title>
+    <title>Pterodactyl Pizza</title>
   </head>
   <body>
     <div class="intro">
-      <h2>Pterodactyle Pizza</h2>
-      <p>Pizza so good it will fly into your mouth... Like a Pterodactyle</p>
+      <h2>Pterodactyl Pizza</h2>
+      <p>Pizza so good it will fly into your mouth... Like a Pterodactyl</p>
     </div>
     <div>
       <form id="select-order">
+        <div>
+          <label for="delivery-method">Delivery Method:</label><br>
+          <select name="delivery-method" id="delivery-method">
+            <option value="Takeout">Takeout</option>
+            <option value="Delivery">Delivery (+ $5)</option>
+          </select>
+        </div>
         <div class="select-size">
-          <label for="select-size">Select a size:</label><br />
+          <label for="select-size">Select a size:</label><br>
           <select name="crust-size" id="crust-size">
             <option value="Small">Small</option>
             <option value="Medium">Medium</option>

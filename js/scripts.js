@@ -5,10 +5,6 @@ function Pizza(size, topping) {
   this.topping = topping;
 }
 
-// Pizza.prototype.selectedOrder = function() {
-//   return this.size + " " + this.topping;
-// }
-
 Pizza.prototype.crustCost = function() {
   let crustCost = 0.00;
   if (this.size === "Small") {
@@ -28,9 +24,21 @@ Pizza.prototype.showToppings = function() {
     topping.push(toppingList[i].value);
   }
   return topping;
-  }
+};
 
-Pizza.prototype.toppingsCost = function() {
+function Order(deliveryMethod) {
+  this.deliveryMethod = deliveryMethod;
+}
+
+Order.prototype.delivery = function() {
+  let deliveryCost = 0
+  if(this.deliveryMethod === "Delivery") {
+    deliveryCost += 5;
+  }
+  return deliveryCost;
+};
+
+Order.prototype.toppingsCost = function() {
   let topping = [];
   let toppingList = document.querySelectorAll("input[type=checkbox]:checked");
   for(let i = 0; i < toppingList.length; i++) {
@@ -41,18 +49,19 @@ Pizza.prototype.toppingsCost = function() {
   return topping.length;
 };
 
-
 //UI Logic -----------------------
 
 function handleFormSubmission(event) {
   event.preventDefault();
   const pizzaSize = document.getElementById("crust-size").value;
   const pizzaToppings = document.querySelectorAll("input[type=checkbox]:checked");
+  const delivery = document.getElementById("delivery-method").value;
+  let newOrder = new Order(delivery);
   let newPizza = new Pizza(pizzaSize, pizzaToppings);
   let toppings = newPizza.showToppings();
   let displayOrder = document.getElementById("display-order");
   let showTotal = document.getElementById("total-cost");
-  let totalCost = newPizza.crustCost() + newPizza.toppingsCost();
+  let totalCost = newPizza.crustCost() + newOrder.toppingsCost() + newOrder.delivery();
   let showSize = document.getElementById("size");
   let showToppings = document.getElementById("toppings");
   showSize.innerText = newPizza.size;
