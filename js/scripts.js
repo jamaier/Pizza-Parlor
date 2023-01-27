@@ -22,10 +22,14 @@ Pizza.prototype.crustCost = function() {
 };
 
 Pizza.prototype.selectToppings = function() {
-  this.toppingsList = [];
-  for(let i = 0; i < checkbox.length; i++) {
-    toppingsList.push(checkbox[i].value);
+  this.topping = [];
+  let toppingList = document.querySelectorAll("input[type=checkbox]:checked");
+  for(let i = 0; i < this.topping.length; i++) {
+    if (toppingList[i].checked) {
+      toppingList.push(this.topping[i]);
+    }
   }
+  return this.topping.length;
 };
 
 
@@ -34,13 +38,13 @@ Pizza.prototype.selectToppings = function() {
 function handleFormSubmission(event) {
   event.preventDefault();
   const pizzaSize = document.getElementById("crust-size").value;
-  const pizzaToppings = document.getElementById("select-toppings").value;
+  const pizzaToppings = document.getElementsByClassName("select-toppings");
   let newPizza = new Pizza(pizzaSize, pizzaToppings);
   let displayOrder = document.getElementById("display-order");
   let showTotal = document.getElementById("total-cost");
   let totalCost = newPizza.crustCost() + newPizza.selectToppings();
   let showSize = document.getElementById("size");
-  let showToppings = document.getElementById("toppings");
+  let showToppings = document.querySelectorAll("input[type=checkbox]:checked");
   showSize.innerText = newPizza.size;
   showToppings.innerText = newPizza.topping;
   showTotal.innerText = "$" + totalCost;
