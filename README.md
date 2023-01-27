@@ -78,11 +78,21 @@ expected output: crustCost = 9 and toppingsCost = 1
 
 ### Describe: selectedOrder("small", "peperoni")
 
-#### Test: "It should display the names of the toppings and size instead of numbers for costing."
+<!-- #### Test: "It should display the names of the toppings and size instead of numbers for costing."
 
 Code : 
   return this.size + " " + this.topping;
 
-expected output: 
+expected output:  -->
+
+### Describe: selectToppings (peperoni, muchroom)
+
+code: 
+
+  topping = [];
+  toppingList = checkboxes.checked
+  for loop pushing checked checkboxes to array and return array length to use as cost value.
+
+Expected Output: 2
 
 

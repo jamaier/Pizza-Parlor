@@ -24,12 +24,12 @@ Pizza.prototype.crustCost = function() {
 Pizza.prototype.selectToppings = function() {
   this.topping = [];
   let toppingList = document.querySelectorAll("input[type=checkbox]:checked");
-  for(let i = 0; i < this.topping.length; i++) {
+  for(let i = 0; i < toppingList.length; i++) {
     if (toppingList[i].checked) {
-      toppingList.push(this.topping[i]);
+      this.topping.push(toppingList[i]);
     }
   }
-  return this.topping.length;
+  console.log(this.topping.length);
 };
 
 
