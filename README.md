@@ -36,6 +36,7 @@ _MIT_
 
 Copyright (c) _2023_ _Jacob Maier_
 
+#### Note: "Starting feature branch to merge later with main once functionality is obtained." 11:00
 
 ## Tests - 
 
@@ -76,13 +77,15 @@ Code:
 
 expected output: crustCost = 9 and toppingsCost = 1
 
-### Describe: selectedOrder("small", "peperoni")
+
+
+<!-- ### Describe: selectedOrder("small", "peperoni")
 
 #### Test: "It should display the names of the toppings and size instead of numbers for costing."
 
 Code : 
   return this.size + " " + this.topping;
 
-expected output: 
+expected output:  -->
 
 
