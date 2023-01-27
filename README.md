@@ -41,13 +41,19 @@ Copyright (c) _2023_ _Jacob Maier_
 
 #### Describe: Pizza("small")
 
-#### Test: "It should return a pizza object for size."
+#### Test: "It should return a pizza object for size based on cost."
 
 Code: if crust is "small" return crustCost += 7
 
 expected output: 7
 
 
+#### Describe: Pizza("medium")
 
+#### Test: "It should return a pizza object for size based on cost."
+
+Code: if crust is "medium" return crustCost += 9
+
+expected output: 9
 
 
