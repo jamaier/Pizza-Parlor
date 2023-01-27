@@ -5,9 +5,9 @@ function Pizza(size, topping) {
   this.topping = topping;
 }
 
-Pizza.prototype.selectedOrder = function() {
-  return this.size + " " + this.topping;
-}
+// Pizza.prototype.selectedOrder = function() {
+//   return this.size + " " + this.topping;
+// }
 
 Pizza.prototype.crustCost = function() {
   let crustCost = 0.00;
@@ -47,15 +47,16 @@ Pizza.prototype.toppingsCost = function() {
 function handleFormSubmission(event) {
   event.preventDefault();
   const pizzaSize = document.getElementById("crust-size").value;
-  const pizzaToppings = document.getElementsByClassName("select-toppings");
+  const pizzaToppings = document.querySelectorAll("input[type=checkbox]:checked");
   let newPizza = new Pizza(pizzaSize, pizzaToppings);
+  let toppings = newPizza.showToppings();
   let displayOrder = document.getElementById("display-order");
   let showTotal = document.getElementById("total-cost");
   let totalCost = newPizza.crustCost() + newPizza.toppingsCost();
   let showSize = document.getElementById("size");
   let showToppings = document.getElementById("toppings");
   showSize.innerText = newPizza.size;
-  showToppings.innerText = newPizza.topping;
+  showToppings.innerText = toppings;
   showTotal.innerText = "$" + totalCost;
   displayOrder.removeAttribute("class");
 }
