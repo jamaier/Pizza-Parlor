@@ -81,7 +81,8 @@ function handleFormSubmission(event) {
   let totalCost = newPizza.crustCost() + newPizza.sideSelection() + newOrder.toppingsCost() + newOrder.delivery();
   let showSize = document.getElementById("size");
   let showToppings = document.getElementById("toppings");
-  let showSides = document.getElementById("sides")
+  let showSides = document.getElementById("sides");
+  showSides.innerText = newPizza.sides;
   showSize.innerText = newPizza.size;
   showToppings.innerText = toppings.join(", ");
   showTotal.innerText = "$" + totalCost;
