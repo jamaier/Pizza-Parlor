@@ -68,9 +68,7 @@ Order.prototype.toppingsCost = function () {
 function handleFormSubmission(event) {
   event.preventDefault();
   const pizzaSize = document.getElementById("crust-size").value;
-  const pizzaToppings = document.querySelectorAll(
-    "input[type=checkbox]:checked"
-  );
+  const pizzaToppings = document.querySelectorAll("input[type=checkbox]:checked");
   const sides = document.getElementById("select-sides").value;
   const delivery = document.getElementById("delivery-method").value;
   let newOrder = new Order(delivery);
