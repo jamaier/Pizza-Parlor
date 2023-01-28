@@ -10,56 +10,62 @@
       <h2>Pterodactyl Pizza</h2>
       <p>Pizza so good it will fly into your mouth... Like a Pterodactyl</p>
     </div>
-    <div>
-      <form id="select-order">
-        <div>
-          <label for="delivery-method">Delivery Method:</label><br />
-          <select name="delivery-method" id="delivery-method">
-            <option value="Takeout">Takeout</option>
-            <option value="Delivery">Delivery (+ $5)</option>
-          </select>
-        </div>
-        <div class="select-size">
-          <label for="select-size">Select a size:</label><br />
-          <select name="crust-size" id="crust-size">
-            <option value="none">-</option>
-            <option value="Small">Small</option>
-            <option value="Medium">Medium</option>
-            <option value="Large">Large</option>
-          </select>
-        </div>
-        <div class="select-toppings">
-          <label for="select-toppings">Select Toppings:</label><br />
-          <input type="checkbox" value="Peperoni" />
-          <label for="Peperoni">Peperoni</label><br />
-          <input type="checkbox" value="Mushroom" />
-          <label for="Mushroom">Mushroom</label><br />
-          <input type="checkbox" value="Sausage" />
-          <label for="Sausage">Sausage</label><br />
-          <input type="checkbox" value="Onion" />
-          <label for="Onion">Onion</label><br />
-          <input type="checkbox" value="Pepers" />
-          <label for="Pepers">Pepers</label>
-        </div>
-        <div class="side-options">
-          <label for="select-sides">Select a side:</label>
-          <select name="select-sides" id="select-sides">
-            <option value="none">-</option>
-            <option value="Salad">Green Salad (+ $5)</option>
-            <option value="Wings">Wings (+ $8)</option>
-            <option value="Garlic-Bread">Garlic Bread (+ $4)</option>
-          </select>
-        </div>
-        <button type="submit">Submit Order</button>
-      </form>
-    </div>
+    <div class="container">
+      <div class="form-container">
+        <form id="select-order">
+          <div class="delivery">
+            <label for="delivery-method">Delivery Method:</label>
+            <select name="delivery-method" id="delivery-method">
+              <option value="Takeout">Takeout</option>
+              <option value="Delivery">Delivery (+ $5)</option>
+            </select>
+          </div>
+          <div class="select-size">
+            <label for="select-size">Select a size:</label>
+            <select name="crust-size" id="crust-size">
+              <option value="Small">Small</option>
+              <option value="Medium">Medium</option>
+              <option value="Large">Large</option>
+            </select>
+          </div>
+          <div class="select-toppings">
+            <label for="select-toppings">Select Toppings:</label>
+            <label for="Peperoni">Peperoni
+            <input type="checkbox" value="Peperoni">
+            </label>
+            <label for="Mushroom">Mushroom
+            <input type="checkbox" value="Mushroom">
+            </label>
+            <label for="Sausage">Sausage
+            <input type="checkbox" value="Sausage">
+            </label>
+            <label for="Onion">Onion
+            <input type="checkbox" value="Onion">
+            </label>
+            <label for="Pepers">Pepers
+            <input type="checkbox" value="Pepers">
+            </label>
+          </div>
+          <div class="side-options">
+            <label for="select-sides">Select a side:</label>
+            <select name="select-sides" id="select-sides">
+              <option value="none">-</option>
+              <option value="Salad">Green Salad (+ $5)</option>
+              <option value="Wings">Wings (+ $8)</option>
+              <option value="Garlic-Bread">Garlic Bread (+ $4)</option>
+            </select>
+          </div>
+          <button type="submit">Submit Order</button>
+        </form>
+      </div>
 
-    <div class="hidden" id="display-order">
-      <h4>Your Order</h4>
-      <p>Size: <span id="size"></span></p>
-      <p>Toppings: <span id="toppings"></span></p>
-      <p>Sides: <span id="sides"></span></p>
-      <p>Total: <span id="total-cost"></span></p>
+      <div class="hidden" id="display-order">
+        <h2>Your Order:</h2>
+        <p>Size: <span id="size"></span></p>
+        <p>Toppings: <span id="toppings"></span></p>
+        <p>Sides: <span id="sides"></span></p>
+        <p>Total: <span id="total-cost"></span></p>
+      </div>
     </div>
   </body>
 </html>
