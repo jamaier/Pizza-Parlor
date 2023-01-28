@@ -20,6 +20,7 @@ _This webpage will take muiltiple inputs in different ways from the user and cre
 * _Clone this repo to your local machine_
 * _Navigate to the top level of the file_
 * _Open index.html in your browser window_
+* _Use this link to view on pages https://jamaier.github.io/Pizza-Parlor/_
 
 
 ## Known Bugs
